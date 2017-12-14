@@ -21,6 +21,11 @@
       "styles": [
         "styles.sass"
       ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "assets/style"
+        ]
+      },
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
