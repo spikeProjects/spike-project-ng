@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import { FlexSpikeComponent } from './flex-spike/flex-spike.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RxSpikeComponent } from './rx-spike/rx-spike.component';
+import { LibsSpikeComponent } from './libs-spike/libs-spike.component';
+import { CoComponent } from './libs-spike/co/co.component';
+import { FormSpikeComponent } from './form-spike/form-spike.component';
+import { TemplateDrivenFormComponent } from './form-spike/template-driven-form/template-driven-form.component';
 
 
 @NgModule({
@@ -16,6 +20,10 @@ import { RxSpikeComponent } from './rx-spike/rx-spike.component';
     FlexSpikeComponent,
     PageNotFoundComponent,
     RxSpikeComponent,
+    LibsSpikeComponent,
+    CoComponent,
+    FormSpikeComponent,
+    TemplateDrivenFormComponent,
   ],
   imports: [
     BrowserModule,
