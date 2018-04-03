@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FlexSpikeComponent } from './flex-spike/flex-spike.component';
 import { RxSpikeComponent } from './rx-spike/rx-spike.component';
 import { LibsSpikeComponent } from './libs-spike/libs-spike.component';
+import { DecoratorsComponent } from './decorators/decorators.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -20,6 +21,10 @@ const appRoutes: Routes = [
 	{
 	  path: 'libs-spike',
 	  component: LibsSpikeComponent,
+	},
+	{
+	  path: 'decorators-spike',
+	  component: DecoratorsComponent,
 	},
 	{ path: '', redirectTo: '/tdc', pathMatch: 'full' },
 	{ path: '**', component: PageNotFoundComponent }

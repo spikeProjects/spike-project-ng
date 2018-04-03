@@ -12,6 +12,7 @@ import { LibsSpikeComponent } from './libs-spike/libs-spike.component';
 import { CoComponent } from './libs-spike/co/co.component';
 import { FormSpikeComponent } from './form-spike/form-spike.component';
 import { TemplateDrivenFormComponent } from './form-spike/template-driven-form/template-driven-form.component';
+import { DecoratorsComponent } from './decorators/decorators.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { TemplateDrivenFormComponent } from './form-spike/template-driven-form/t
     CoComponent,
     FormSpikeComponent,
     TemplateDrivenFormComponent,
+    DecoratorsComponent,
   ],
   imports: [
     BrowserModule,
