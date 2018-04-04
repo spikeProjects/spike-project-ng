@@ -23,6 +23,7 @@
     "@angular/router": "^4.2.4",
     "co": "^4.6.0",
     "common-tags": "^1.6.0",
+    "core-decorators": "^0.20.0",
     "core-js": "^2.4.1",
     "fs": "^0.0.1-security",
     "rxjs": "^5.4.2",
