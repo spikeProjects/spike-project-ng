@@ -1,0 +1,105 @@
+@import './variables'
+
+@mixin background($image, $type:jpg, $bgColor:#fff, $left:left, $top:top)
+  background: #{$bgColor} url(/assets/images/home/#{$image}.#{$type}) no-repeat #{$left} #{$top}
+
+/**S: normal style**/
+div, p, h2, h1, h3, h4, h5, h6, span, dl, dd, dt, ul, li
+  padding: 0
+  margin: 0
+
+$box-width: 1200px
+$arrow-color: #009AFF
+
+.middle-title
+  padding-top: 80px
+  padding-bottom: 35px
+  text-align: center
+  font-size: 2.8rem
+  font-weight: 300
+  color: #fff
+  position: relative
+
+  &:after
+    content: ""
+    display: inline-block
+    width: 70px
+    height: 0
+    border-bottom: 2px #3159B5 solid
+    margin: 0 auto
+    position: absolute
+    top: 144px
+    left: 50%
+    margin-left: -35px
+
+.center-box
+  width: $box-width
+  margin: 0 auto
+
+
+.arrow
+  width: 60px
+  height: 60px
+  display: inline-block
+  margin-top: -30px
+  cursor: pointer
+  position: absolute
+  top: 50%
+  &:before
+    margin-top: -13px
+
+.arrow.left
+  left: 50%
+  margin-left: -650px
+
+  &:before
+    content: ""
+    display: inline-block
+    width: 24px
+    height: 24px
+    border-bottom: 2px $arrow-color solid
+    border-left: 2px $arrow-color solid
+    transform: rotate(45deg)
+    position: absolute
+    left: 15px
+    top: 50%
+.arrow.right
+  right: 50%
+  margin-right: -650px
+
+  &:before
+    content: ""
+    display: inline-block
+    width: 24px
+    height: 24px
+    border-right: 2px $arrow-color solid
+    border-top: 2px $arrow-color solid
+    transform: rotate(45deg)
+    position: absolute
+    right: 15px
+    top: 50%
+
+.blue-button, button.blue-button
+  display: inline-block
+  width: 130px
+  height: 40px
+  line-height: 40px
+  background: #176eda
+  font-size: 1.4rem
+  color: #fff
+  text-align: center
+
+h3.sub-title
+  font-size: 1.6rem
+  padding: 32px 0 14px 1rem
+  &:before
+    content: ""
+    display: inline-block
+    width: 0.4rem
+    height: 1.6rem
+    position: relative
+    top: 0.3rem
+    right: 0.8rem
+    background: $common-blue
+
+/**E: normal style**/

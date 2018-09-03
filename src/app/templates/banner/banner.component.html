@@ -1,0 +1,17 @@
+<div class="details-banner">
+  <div class="position-center">
+    <div class="slogans">
+      <h3 class="title">{{data.banner.h3}}</h3>
+      <h4 *ngIf="data.banner.h4" class="title">{{data.banner.h4}}</h4>
+      <p>{{data.banner.description}}</p>
+    </div>
+
+    <div
+      class="adv-image" 
+      (mousemove)="onMousemove($event)" 
+      (mouseleave)="onMouseleave($event)" 
+    >
+      <img class="image" alt="" src="{{data.banner.advImage}}" />
+    </div>
+  </div>
+</div>

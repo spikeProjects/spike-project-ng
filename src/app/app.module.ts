@@ -13,6 +13,11 @@ import { CoComponent } from './libs-spike/co/co.component';
 import { FormSpikeComponent } from './form-spike/form-spike.component';
 import { TemplateDrivenFormComponent } from './form-spike/template-driven-form/template-driven-form.component';
 import { DecoratorsComponent } from './decorators/decorators.component';
+import { TemplatesComponent } from './templates/templates.component';
+import { BannerDirective } from './templates/banner.directive';
+import { BannerComponent } from './templates/banner/banner.component';
+import { WrapperComponent } from './templates/wrapper/wrapper.component';
+import { CounterComponent } from './templates/counter/counter.component';
 
 
 @NgModule({
@@ -26,11 +31,19 @@ import { DecoratorsComponent } from './decorators/decorators.component';
     FormSpikeComponent,
     TemplateDrivenFormComponent,
     DecoratorsComponent,
+    TemplatesComponent,
+    BannerDirective,
+    BannerComponent,
+    WrapperComponent,
+    CounterComponent,
   ],
   imports: [
     BrowserModule,
     // Ng2GoogleChartsModule,
     AppRoutingModule,
+  ],
+  entryComponents: [
+    BannerComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

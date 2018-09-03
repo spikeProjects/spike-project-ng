@@ -14,23 +14,23 @@ export class AppComponent {
 
   constructor(
   ) {
-  	console.log(utils)
+    // console.log(utils);
 
-  	window.onbeforeunload = function(e) {
-  		alert(1);
-  	}
-  	window.onunload = function(e) {
-  		alert(21);
-  	}
+    window.onbeforeunload = function(e) {
+      alert(1);
+    };
+    window.onunload = function(e) {
+      alert(21);
+    };
   }
 
   @HostListener('window:beforeunload', ['$event'])
   public beforeunloadHandler(event) {
-  	alert('fuck')
+    alert('fuck');
   }
 
   @HostListener('window:onunload', ['$event'])
   public beforeonunload(event) {
-  	alert('fuc2')
+    alert('fuc2');
   }
 }

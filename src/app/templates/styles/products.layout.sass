@@ -1,0 +1,388 @@
+@import 'util'
+@import './layout'
+
+p, div, span, h1,h2,h3,h4,h5, ul, li, dl, dd, dt
+  padding: 0
+  margin: 0
+
+$ctnColor: #354052
+
+
+
+@keyframes slogan-fade-up
+  0%
+    transform: translate3d(190px, 30%, 0)
+    display: none
+    opacity: 0
+  90%
+    transform: translate3d(190px, -55%, 0)
+    opacity: 90
+  95%
+    transform: translate3d(190px, -45%, 0)
+    opacity: 95
+  100%
+    transform: translate3d(190px, -50%, 0)
+    display: block
+    opacity: 1
+
+@keyframes adv-fade-up
+  0%
+    transform: translate3d(0, 30%, 0)
+    display: none
+    opacity: 0
+
+  100%
+    transform: translate3d(0, 0, 0)
+    display: block
+    opacity: 1
+
+
+.products-menu
+  width: 190px
+  height: 100%
+  box-shadow: 0 1px 20px 0 rgba(28, 35, 47, 0.07)
+  background: #fff
+  position: absolute
+  top: 52px
+  left: 50%
+  margin-left: -600px
+  z-index: 20
+
+.details-banner
+  height: 350px
+  width: 100%
+  font-size: 0
+  background: url("/assets/images/banner-bg.png")
+
+.position-center
+  @extend .center-box
+  height: 100%
+  position: relative
+
+  .slogans
+    display: inline-block
+    width: 460px
+    padding-left: 50px
+    vertical-align: top
+    position: relative
+    top: 50%
+    transform: translate(190px, -50%)
+    animation: slogan-fade-up 1s
+
+    h3, h4
+      color: #fff
+
+    h3.title
+      font-size: 3.6rem
+      margin: 0
+
+    h3.alias
+      font-size: 3.6rem
+      font-weight: normal
+      margin: 0 0 10px 0
+
+    h3.title-cmpt
+      font-size: 3rem
+
+    h4.title
+      font-size: 3rem
+      font-weight: 300
+      margin: 25px 0 0
+
+    p
+      padding-top: 20px
+      font-size: 1.4rem
+      color: #fff
+      line-height: 24px
+      text-align: justify
+
+  .adv-image
+    display: inline-block
+    width: 450px
+    height: 270px
+    overflow: hidden
+    position: absolute
+    top: 35px
+    right: 40px
+    img
+      width: 100%
+      animation: adv-fade-up 1s
+
+.tab-box
+  display: block
+  width: 1010px
+  min-width: 1010px
+  margin: 0 auto
+  overflow: hidden
+  position: relative
+  left: 95px
+
+.tabsUl-box
+  width: 100%
+  height: 52px
+
+.tabsUl
+  display: block
+  width: 970px
+  height: 56px
+  border-bottom: 1px #d3d9e5 solid
+  margin: 0 20px
+
+  li
+    float: left
+    display: inline-block
+    font-size: 1.4rem
+
+  a
+    display: inline-block
+    padding: 30px 20px 10px
+
+    &:hover, &.active
+      color: #2481e3
+      font-weight: 600
+      border-bottom: 2px #2481e3 solid
+      margin-bottom: -2px
+      cursor: pointer
+  &.fixed
+    width: 1010px
+    margin-left: 0
+    position: fixed
+    top: 0
+    z-index: 100
+    box-shadow: rgba(0,0,0,.22) 0 5px 10px -5px
+    background: #fff
+
+    a
+      padding: 30px 50px 10px
+
+.tab-sub
+  padding: 0 18px
+
+h3.sub-title
+  font-size: 1.6rem
+  padding: 32px 0 14px 1rem
+  &:before
+    content: ""
+    display: inline-block
+    width: 0.4rem
+    height: 1.6rem
+    position: relative
+    top: 0.3rem
+    right: 0.8rem
+    background: $common-blue
+
+.details-box
+  padding: 30px 46px
+  background: #fff
+  border-radius: 0.4rem
+  overflow: hidden
+  font-size: 0
+
+  .img
+    background-repeat: no-repeat
+  .diagram
+    display: block
+
+    img
+      margin: 0px 50px 40px 0px
+
+  .text-list
+
+    li
+      position: relative
+      line-height: 2.4rem
+      font-size: 1.2rem
+
+      p
+        padding: 0 0 20px
+        margin: 0
+        font-size: 1.2rem
+        line-height: 24px
+        text-align: justify
+        color: $ctnColor
+
+      h5
+        margin-top: 0
+        margin-bottom: 16px
+        font-size: 1.4rem
+
+      h5:before
+        content: ''
+        display: inline-block
+        width: 0.5rem
+        height: 0.5rem
+        position: relative
+        left: -20px
+        top: -1px
+        border-radius: 0.25rem
+        background: $common-blue
+
+  .fl
+    float: left
+
+  .fr
+    float: right
+
+  .in-block
+    display: inline-block
+
+
+  //paragraphs if for scenario-children and component-intro, to support flexable image children
+  .paragraphs
+    li
+      position: relative
+      p
+        padding-right: 45px
+        margin-bottom: 1rem
+        font-size: 1.2rem
+        line-height: 24rem
+        text-align: justify
+
+        &:before
+          content: ''
+          display: inline-block
+          width: 0.5rem
+          height: 0.5rem
+          position: absolute
+          left: -20px
+          top: 0.7rem
+          border-radius: 0.25rem
+          background: $common-blue
+
+.details-box.text, .details-box.d
+  .text-list
+    margin-left: 0
+    li
+      h5:before
+        left: -20px
+
+$row-height: 124px
+.intro-table
+  display: none
+  background: #fff
+  &.current
+    display: block
+  .row
+    height: $row-height
+    display: flex
+    font-size: 1.4rem
+    border-bottom: 1px #e6eaee solid
+    span
+      float: left
+      display: inline-block
+      height: $row-height
+
+    .title
+      width: 200px
+      height: $row-height
+      line-height: $row-height
+      font-weight: 600
+      font-size: 1.4rem
+      text-indent: 40px
+      color: $ctnColor
+
+    .ctn
+      width: 680px
+      padding-right: $row-height
+      display: flex
+      font-size: 1.2rem
+      align-items: center
+      align-content: center
+      line-height: 1.5
+      color: $ctnColor
+
+    .anchor
+      width: 110px
+      height: $row-height
+      line-height: $row-height
+      font-weight: 600
+      color: #0066ce
+
+  .row.h
+    height: $row-height
+
+
+
+  .img
+    display: inline-block
+    float: left
+
+
+.scenarios-content
+  clear: both
+  border: 1px #e6eaee solid
+  background: #fff
+  min-height: 720px
+
+  .scenario-details
+    display: none
+    &.current
+      display: block
+    padding: 50px 46px
+    position: relative
+    overflow: auto
+
+    .scenario-img
+      display: inline-block
+      float: right
+      max-width: 645px
+      padding-left: 14px
+      position: relative
+      right: -16px
+
+    p
+      line-height: 24px
+      font-size: 1.2rem
+      position: relative
+      color: $ctnColor
+
+      &:before
+        content: ''
+        display: inline-block
+        width: 6px
+        height: 6px
+        position: absolute
+        left: -20px
+        top: 8px
+        border-radius: 3px
+        background: $common-blue
+
+.component-intro-tab-box, .scenarios-tab-box
+
+  ul
+    display: block
+    height: 42px
+    margin-bottom: -1px
+    z-index: 2
+
+    li
+      float: left
+      display: inline-block
+
+      a
+        display: inline-block
+        border: 1px #e6eaee solid
+        border-bottom: 0
+        padding: 12px 40px
+        margin-top: -1px
+        margin-right: -1px
+        font-size: 1.4rem
+        background: #f6f8fa
+
+        &:hover, &.active
+          border: 1px #e6eaee solid
+          border-top: 2px #2481e3 solid
+          border-bottom: 1px #fff solid
+          margin-top: -1px
+          margin-bottom: -1px
+          color: #2481e3
+          background: #fff
+          font-weight: 600
+
+.component-intro-content
+  min-height: 600px
+
+  .intro-table
+    border: 1px #e6eaee solid
+    border-bottom: 0
+

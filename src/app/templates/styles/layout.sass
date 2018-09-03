@@ -1,0 +1,21 @@
+
+@import 'common'
+
+div, p, h2, h1, h3, h4, h5, span, dl, dd, dt, ul, li
+  padding: 0
+  margin: 0
+
+.center-box
+  display: block
+  width: $box-width
+  min-width: $box-width
+  max-width: 1230px
+  margin: 0 auto
+  overflow: hidden
+
+.center-box-absolute
+	@extend .center-box
+	position: absolute
+	left: 50%
+	margin-left: -($box-width/2)
+

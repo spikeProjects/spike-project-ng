@@ -20,51 +20,51 @@ export class DecoratorsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  	let descriptor = { 
-  		value: function desc(params) {
-  			console.log(params, 'in sex function.');
-  		},
-  		enumerable: false,
-  		configurable: true,
-  		writable: true
-  	};
+    const descriptor = {
+      value: function desc(params) {
+        console.log(params, 'in sex function.');
+      },
+      enumerable: false,
+      configurable: true,
+      writable: true
+    };
 
-  	const obj = {
-  		name: 'rockwang',
-  		age: 35
-  	};
-  	Object.defineProperty(obj, 'sex', {
-  		...descriptor
-  	});
-  	console.log(obj);
+    const obj = {
+      name: 'rockwang',
+      age: 35
+    };
+    Object.defineProperty(obj, 'sex', {
+      ...descriptor
+    });
+    console.log(obj);
 
-  	// below is for test: configurable
-  	let cat = new Cat('Tom');
-  	/*cat.meow = function meow() {
-  		console.log('new meow');
-  	}*/
-  	this.decoratorReadonlyTest();
+    // below is for test: configurable
+    const cat = new Cat('Tom');
+    /*cat.meow = function meow() {
+      console.log('new meow');
+    }*/
+    this.decoratorReadonlyTest();
     this.coreDecoratorTest();
     this.classDecoratorTest();
   }
 
   decoratorReadonlyTest() {
-  	let descriptor: any = { 
-  		value: function val() {
-  		},
-			enumerable: false,
-			configurable: true,
-			writable: true
-		};
+    let descriptor: any = { 
+      value: function val() {
+      },
+      enumerable: false,
+      configurable: true,
+      writable: true
+    };
 
-		descriptor = readonly(Dog.prototype, 'hao', descriptor) || descriptor;
-		Object.defineProperty(Dog.prototype, 'hao', descriptor);
-  	var garfield = new Dog('Apply');
+    descriptor = readonly(Dog.prototype, 'hao', descriptor) || descriptor;
+    Object.defineProperty(Dog.prototype, 'hao', descriptor);
+    var garfield = new Dog('Apply');
 
-  	console.log(garfield);
-		/*garfield.hao = function(){ 
-			console.log('I want lasagne!');
-		};*/
+    console.log(garfield);
+    /*garfield.hao = function(){ 
+      console.log('I want lasagne!');
+    };*/
   }
 
   coreDecoratorTest() {

@@ -1,0 +1,30 @@
+<p>ng-template，ng-content，ng-container spike</p>
+<!--链接：https://www.imooc.com/article/details/id/24837
+    来源：慕课网 -->
+<!-- 1.ng-template -->
+<ng-template #temp>  测试文本</ng-template>
+<ng-template appBanner></ng-template>
+
+<!-- 2.元素<template> 
+<template>元素是:
+  一个自带display:none的隐藏元素，只不过二者隐藏的方式不同;
+  是一个TemplateRef实例
+-->
+<template>测试文本2 </template>
+<template style="display: block" #d> 测试文本3 </template>
+
+<!--3.ng-content: 内容映射
+在组件内嵌入模版代码，方便定制可复用的组件
+-->
+<app-wrapper>
+  <app-counter>3</app-counter>
+  <app-counter>2</app-counter>
+  <app-counter>1</app-counter>
+</app-wrapper>
+
+<!--4.ng-container: 
+  <ng-container>并不存在，它仅仅是作为一个容器使用。
+    在它之上我们可以使用Angular的指令，而不像<div>之类的元素影响布局。
+-->
+<ng-container>测试文本4</ng-container>
+<ng-container *ngIf="true">测试文本5</ng-container>
