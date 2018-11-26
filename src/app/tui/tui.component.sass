@@ -1,0 +1,118 @@
+@import 'src/app/shared/index'
+
+\:host /deep/
+  .tui-submenu
+    position: relative
+
+    &-body .content
+      margin-top: 100px
+
+    .submenu-filter
+      position: absolute
+      top: 100px
+      left: 20px
+      right: 20px
+
+      .tui-checkbox
+        font-size: $font-md
+
+    &-collapsed
+      .content
+        margin-top: 0
+
+      .submenu-filter
+        visibility: hidden
+
+    .item-name.text-ellipsis
+      padding-left: 0
+      margin-left: -2px
+    .item-suffix
+      margin-left: 0
+      margin-right: 1rem
+    .tui-submenu-body-collapsed .item-suffix
+      display: none
+
+
+  .tui-layout-main-nav
+    span
+      display: flex
+      align-items: center
+      cursor: pointer
+      padding-left: 0
+
+    svg
+      fill: $brandblue
+      margin-right: 0.5rem
+
+  .tui-layout-main-container
+    display: flex
+    flex-direction: column
+    margin: 0
+    min-width: 50rem
+
+    .tui-layout-main-title
+      font-size: 1.5rem
+      display: flex
+      justify-content: space-between
+
+      .left
+        display: flex
+        align-items: center
+
+        .tenant-status
+          font-size: $font-md
+          margin-left: .5rem
+          color: $text-default
+          font-weight: normal
+        span.status-span
+          display: inline-block
+          position: relative
+          left: 3px
+          &:hover
+            .view-more
+              fill: #336FD3
+        .view-more
+          fill: #A8AFC0
+
+      .right .tui-icon
+        fill: #fff
+
+
+    .tenant-detail
+      display: flex
+      align-items: center
+      padding-left: 1rem
+      padding-bottom: 3rem
+
+      .description
+        flex: 1
+        height: 60px
+        overflow-y: auto
+        word-break: break-all
+        margin-top: 20px
+        font-size: 14px
+        padding-right: 1.5rem
+
+      .tenant-property
+        flex: 2
+        display: flex
+        align-items: center
+        padding-left: 2rem
+        border-left: 1px solid $lightgrey
+
+        .tui-property
+          flex: .6
+          min-width: 10rem
+          margin: 0.75rem 0.5rem 0.75rem 0
+
+  .tui-tab
+    flex: 1
+    display: flex
+    flex-direction: column
+    margin-top: -43px
+
+    .tui-tab-body
+      display: flex
+      flex-direction: column
+      flex: 1
+      margin-top: .5rem

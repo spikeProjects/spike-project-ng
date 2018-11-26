@@ -8,6 +8,9 @@ import { LibsSpikeComponent } from './libs-spike/libs-spike.component';
 import { DecoratorsComponent } from './decorators/decorators.component';
 import { TemplatesComponent } from './templates/templates.component';
 
+import { TuiComponent } from './tui/tui.component';
+import { PublishSpikeComponent } from './publish-spike/publish-spike.component';
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
@@ -30,6 +33,14 @@ const appRoutes: Routes = [
   {
     path: 'templates',
     component: TemplatesComponent,
+  },
+  {
+    path: 'tui',
+    component: TuiComponent,
+  },
+  {
+    path: 'ng-publish',
+    component: PublishSpikeComponent,
   },
   { path: '', redirectTo: '/tdc', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
