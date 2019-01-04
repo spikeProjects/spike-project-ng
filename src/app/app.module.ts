@@ -20,9 +20,9 @@ import { WrapperComponent } from './templates/wrapper/wrapper.component';
 import { CounterComponent } from './templates/counter/counter.component';
 import { TuiComponent } from './tui/tui.component';
 import { TuiModule } from 'tdc-ui';
-import { PublishSpikeComponent } from './publish-spike/publish-spike.component';
 
 import { PopupComponent } from '@rockwang/migrant';
+import { EcoChartsComponent } from './eco-charts/eco-charts.component';
 
 @NgModule({
   declarations: [
@@ -41,8 +41,8 @@ import { PopupComponent } from '@rockwang/migrant';
     WrapperComponent,
     CounterComponent,
     TuiComponent,
-    PublishSpikeComponent,
-    PopupComponent
+    PopupComponent,
+    EcoChartsComponent
   ],
   imports: [
     BrowserModule,

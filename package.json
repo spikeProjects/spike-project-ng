@@ -46,6 +46,7 @@
     "@types/node": "~10.9.4",
     "abbrev": "^1.1.1",
     "codelyzer": "~4.2.1",
+    "eco-charts": "0.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",

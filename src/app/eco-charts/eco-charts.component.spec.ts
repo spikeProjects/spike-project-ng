@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PublishSpikeComponent } from './publish-spike.component';
+import { EcoChartsComponent } from './eco-charts.component';
 
-describe('PublishSpikeComponent', () => {
-  let component: PublishSpikeComponent;
-  let fixture: ComponentFixture<PublishSpikeComponent>;
+describe('EcoChartsComponent', () => {
+  let component: EcoChartsComponent;
+  let fixture: ComponentFixture<EcoChartsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PublishSpikeComponent ]
+      declarations: [ EcoChartsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PublishSpikeComponent);
+    fixture = TestBed.createComponent(EcoChartsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

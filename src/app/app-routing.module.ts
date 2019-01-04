@@ -9,7 +9,7 @@ import { DecoratorsComponent } from './decorators/decorators.component';
 import { TemplatesComponent } from './templates/templates.component';
 
 import { TuiComponent } from './tui/tui.component';
-import { PublishSpikeComponent } from './publish-spike/publish-spike.component';
+import { EcoChartsComponent } from './eco-charts/eco-charts.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -39,8 +39,8 @@ const appRoutes: Routes = [
     component: TuiComponent,
   },
   {
-    path: 'ng-publish',
-    component: PublishSpikeComponent,
+    path: 'eco-charts',
+    component: EcoChartsComponent,
   },
   { path: '', redirectTo: '/tdc', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
