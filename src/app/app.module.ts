@@ -24,6 +24,7 @@ import { TuiModule } from 'tdc-ui';
 
 import { PopupComponent } from '@rockwang/migrant';
 import { EcoChartsComponent } from './eco-charts/eco-charts.component';
+import { IocComponent } from './ioc/ioc.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { EcoChartsComponent } from './eco-charts/eco-charts.component';
     CounterComponent,
     TuiComponent,
     PopupComponent,
-    EcoChartsComponent
+    EcoChartsComponent,
+    IocComponent
   ],
   imports: [
     BrowserModule,

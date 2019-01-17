@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { 
+import {
   Cat, /*readonly,*/ Dog,
   Person,
   MySuperHero,
@@ -33,42 +33,43 @@ export class DecoratorsComponent implements OnInit {
       name: 'rockwang',
       age: 35
     };
-    Object.defineProperty(obj, 'sex', {
-      ...descriptor
-    });
+    Object.defineProperty(obj, 'sex', descriptor);
     console.log(obj);
 
     // below is for test: configurable
     const cat = new Cat('Tom');
-    /*cat.meow = function meow() {
-      console.log('new meow');
-    }*/
+    // Cannot assign to read only property 'meow' of object '[object Object]'
+    // cat.meow = function meow() {
+    //   console.log('new meow');
+    // }
     this.decoratorReadonlyTest();
     this.coreDecoratorTest();
     this.classDecoratorTest();
   }
 
   decoratorReadonlyTest() {
-    let descriptor: any = { 
-      value: function val() {
-      },
-      enumerable: false,
-      configurable: true,
-      writable: true
-    };
+    // let descriptor: any = {
+    //   value: function val() {
+    //   },
+    //   enumerable: false,
+    //   configurable: true,
+    //   writable: false
+    // };
 
-    descriptor = readonly(Dog.prototype, 'hao', descriptor) || descriptor;
-    Object.defineProperty(Dog.prototype, 'hao', descriptor);
-    var garfield = new Dog('Apply');
+    // descriptor = readonly(Dog.prototype, 'hao', descriptor) || descriptor;
+    // Object.defineProperty(Dog.prototype, 'hao', descriptor);
+    const garfield = new Dog('Apply');
 
     console.log(garfield);
-    /*garfield.hao = function(){ 
+    garfield.hao = function() {
       console.log('I want lasagne!');
-    };*/
+      return '';
+    };
+    garfield.hao();
   }
 
   coreDecoratorTest() {
-    let captainPicard: any = new Person();
+    const captainPicard: any = new Person();
 
     captainPicard.facepalm();
     captainPicard.facepalmHard();
@@ -76,9 +77,9 @@ export class DecoratorsComponent implements OnInit {
   }
 
   classDecoratorTest() {
-    let superHero: any = new MySuperHero();
+    const superHero: any = new MySuperHero();
     console.log(MySuperHero);
-
+    // console.log(MySuperHero.isSuperhero);
   }
 
 }

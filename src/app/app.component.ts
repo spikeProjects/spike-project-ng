@@ -1,5 +1,5 @@
 import { Component, HostBinding, HostListener } from '@angular/core';
-import { utils } from 'spike-npm-publish';//native js npm;
+import { utils } from 'spike-npm-publish'; // native js npm;
 
 
 @Component({
