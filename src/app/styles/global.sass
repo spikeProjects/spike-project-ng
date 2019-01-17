@@ -1,0 +1,56 @@
+@import './util'
+
+.tui-modal
+  z-index: 1
+
+body.tui-modal-open
+
+  .tcc-root
+    display: block
+    filter: blur(4px)
+
+// 侧边栏的结构样式
+.submenu-layout
+  display: flex
+  min-height: 100vh
+
+.tcc-icon-hover
+  cursor: pointer
+
+  &:hover
+    fill: $brand-primary
+
+.tcc-icon-mute
+  fill: $brand-info !important
+
+.tcc-link
+  color: $brand-primary
+  cursor: pointer
+
+  &:hover
+    color: $brand-info
+
+.tcc-title
+  margin: 12px 0
+  padding-left: 8px
+  border-left: 3px solid $brand-primary
+  font-weight: bold
+  font-size: $font-md
+
+.tcc-pagination
+  @include flex-align(center, flex-end)
+  padding: .5rem 1rem
+
+  .tui-pagination
+    justify-content: flex-end
+
+// 弹窗样式
+.tcc-modal-foot
+  @include flex-xy-center
+  margin-top: 2rem
+
+  button:not(:last-child)
+    margin-right: 1rem
+
+.tcc-modal-content
+  padding: 0 1.5rem

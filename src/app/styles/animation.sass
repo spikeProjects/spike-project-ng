@@ -1,0 +1,29 @@
+@keyframes tcc-rotate
+  0%
+    transform: rotate(0deg)
+
+  50%
+    transform: rotate(180deg)
+
+  100%
+    transform: rotate(360deg)
+
+.tcc-rotate
+  animation: tcc-rotate 1s linear infinite
+
+
+@keyframes ripple
+  0%
+    transform: scale(0, 0)
+    opacity: 1
+  20%
+    transform: scale(1, 1)
+    opacity: 1
+  100%
+    opacity: 0
+    transform: scale(1.5, 1.5)
+
+.tcc-focus-ripple
+  &:focus:not(:active)::after
+    animation: ripple 0.8s ease-out
+

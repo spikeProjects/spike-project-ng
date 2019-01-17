@@ -1,32 +1,77 @@
-<p>
-  tui works!
-  <tui-submenu backUrl="../">
+tui works!
+<!--   <tui-submenu backUrl="../">
     <div class="submenu-filter">
     </div>
     <tui-submenu-list menuTitle="{{'fuck title'}}: {{67}}" [items]="submenuItems" (selectChange)="ssssssss($event)"></tui-submenu-list>
-  </tui-submenu>
+  </tui-submenu> -->
+<form [formGroup]="myForm" tuiForm labelFlex="1" inputFlex="4" addon (ngSubmit)="submit()">
+  <tui-form-item label="标题">
+    <tui-input
+      name="title"
+      [formControl]="myForm.controls['title']"
+      required
+    ></tui-input>
+  </tui-form-item>
 
-  <!-- <tui-menu
-    selectedKey="user"
-    (selectChange)="selectChange($event)"
-    [selectedKey]=""
-    menuTitle="分类菜单"
-  >
-    <tui-menu-item-group menuTitle="用户与权限">
-      <tui-menu-item icon="user" key="user">
-        用户
-      </tui-menu-item>
-      <tui-menu-item icon="mask" key="role">
-        角色
-      </tui-menu-item>
-      <tui-menu-item icon="user-group" key="group">
-        组
-      </tui-menu-item>
-    </tui-menu-item-group>
-    <tui-menu-item-group menuTitle="产品">
-      <tui-menu-item icon="list" key="product">
-        产品
-      </tui-menu-item>
-    </tui-menu-item-group>
-  </tui-menu> -->
-</p>
+  <tui-form-item label="服务类型">
+    <tui-select
+      style="width:100px"
+      placeholder="tui select example"
+      [formControl]="myForm.controls['serviceType']"
+      required
+    >
+      <tui-select-option
+        *ngFor="let company of companies"
+        [value]="company.name"
+      >
+        {{company.name | tuiDefault }}
+      </tui-select-option>
+    </tui-select>
+  </tui-form-item>
+
+  <tui-form-item label="优先级">
+    <tui-select
+      style="width:100px"
+      placeholder="tui select example"
+      [formControl]="myForm.controls['priority']"
+      required
+    >
+      <tui-select-option
+        *ngFor="let company of companies"
+        [value]="company.name"
+      >
+        {{company.name | tuiDefault }}
+      </tui-select-option>
+    </tui-select>
+  </tui-form-item>
+
+  <tui-form-item label="资源申请">
+    <tui-checkbox-group
+      [formControl]="myForm.controls['params']"
+      required
+    >
+      <tui-checkbox-item value="read">Read</tui-checkbox-item>
+      <tui-checkbox-item value="code">Code</tui-checkbox-item>
+    </tui-checkbox-group>
+  </tui-form-item>
+
+  <tui-form-item label="内容描述">
+    <tui-textarea
+      name="description"
+      [formControl]="myForm.controls['params']"
+    ></tui-textarea>
+  </tui-form-item>
+  <tui-form-item class="btns">
+    <button
+      tuiBtn="primary"
+      type="button"
+      (click)="toggleUserFormDisable()"
+    >取消</button>
+    <button tuiBtn="primary" [disabled]="myForm.invalid">确定</button>
+    <button
+      tuiBtn="danger"
+      [disabled]="myForm.invalid"
+      tuiBtnOutline
+    >删除</button>
+  </tui-form-item>
+</form>
