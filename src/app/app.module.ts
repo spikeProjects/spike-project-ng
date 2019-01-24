@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { QuillModule } from 'ngx-quill';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { TuiModule } from 'tdc-ui';
 import { PopupComponent } from '@rockwang/migrant';
 import { EcoChartsComponent } from './eco-charts/eco-charts.component';
 import { IocComponent } from './ioc/ioc.component';
+import { QuillComponent } from './quill/quill.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { IocComponent } from './ioc/ioc.component';
     TuiComponent,
     PopupComponent,
     EcoChartsComponent,
-    IocComponent
+    IocComponent,
+    QuillComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { IocComponent } from './ioc/ioc.component';
     ReactiveFormsModule,
     // Ng2GoogleChartsModule,
     AppRoutingModule,
-    TuiModule
+    TuiModule,
+    QuillModule
   ],
   entryComponents: [
     BannerComponent

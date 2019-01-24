@@ -11,6 +11,7 @@ import { TemplatesComponent } from './templates/templates.component';
 import { TuiComponent } from './tui/tui.component';
 import { EcoChartsComponent } from './eco-charts/eco-charts.component';
 import { IocComponent } from './ioc/ioc.component';
+import { QuillComponent } from './quill/quill.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -46,6 +47,10 @@ const appRoutes: Routes = [
   {
     path: 'IocComponent',
     component: IocComponent,
+  },
+  {
+    path: 'quill',
+    component: QuillComponent,
   },
   { path: '', redirectTo: '/tdc', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
