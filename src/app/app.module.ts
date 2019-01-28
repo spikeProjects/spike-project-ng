@@ -27,6 +27,7 @@ import { PopupComponent } from '@rockwang/migrant';
 import { EcoChartsComponent } from './eco-charts/eco-charts.component';
 import { IocComponent } from './ioc/ioc.component';
 import { QuillComponent } from './quill/quill.component';
+import { Base64Component } from './base64/base64.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { QuillComponent } from './quill/quill.component';
     PopupComponent,
     EcoChartsComponent,
     IocComponent,
-    QuillComponent
+    QuillComponent,
+    Base64Component
   ],
   imports: [
     BrowserModule,

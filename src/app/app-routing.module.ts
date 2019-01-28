@@ -12,6 +12,7 @@ import { TuiComponent } from './tui/tui.component';
 import { EcoChartsComponent } from './eco-charts/eco-charts.component';
 import { IocComponent } from './ioc/ioc.component';
 import { QuillComponent } from './quill/quill.component';
+import { Base64Component } from './base64/base64.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -51,6 +52,10 @@ const appRoutes: Routes = [
   {
     path: 'quill',
     component: QuillComponent,
+  },
+  {
+    path: 'base64',
+    component: Base64Component,
   },
   { path: '', redirectTo: '/tdc', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }

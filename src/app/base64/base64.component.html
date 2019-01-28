@@ -1,0 +1,10 @@
+<p>
+  base64 works!
+</p>
+
+<div>
+  <span>upload:</span>
+  <input type="file" id="image" multiple="multiple"><br/>
+</div>
+
+<img *ngIf="imageBase64" src={{imageBase64}} />
