@@ -1,4 +1,4 @@
-export const fileReader = function(id, cb?) {
+export const fileReader = function(id, subject?) {
   const reader = new FileReader();
   const AllowImgFileSize = 2100000; // 上传图片最大值(单位字节)（ 2 M = 2097152 B ）超过2M上传失败
   const ele: any = document.querySelector('#' + id);
@@ -17,10 +17,7 @@ export const fileReader = function(id, cb?) {
           alert( '上传失败，请上传不大于2M的图片！');
           return;
         } else {
-          // 执行上传操作
-          if (cb) {
-            cb(reader.result);
-          }
+          subject.next(reader.result);
         }
       };
     }
