@@ -13,6 +13,7 @@ import { EcoChartsComponent } from './eco-charts/eco-charts.component';
 import { IocComponent } from './ioc/ioc.component';
 import { QuillComponent } from './quill/quill.component';
 import { Base64Component } from './base64/base64.component';
+import { IframeComponent } from './iframe/iframe.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -56,6 +57,10 @@ const appRoutes: Routes = [
   {
     path: 'base64',
     component: Base64Component,
+  },
+  {
+    path: 'iframe',
+    component: IframeComponent,
   },
   { path: '', redirectTo: '/tdc', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }

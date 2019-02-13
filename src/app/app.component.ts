@@ -1,6 +1,6 @@
 import { Component, HostBinding, HostListener } from '@angular/core';
 import { utils } from 'spike-npm-publish'; // native js npm;
-
+import { isPrime } from './shared/script/utils';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +22,10 @@ export class AppComponent {
     window.onunload = function(e) {
       alert(21);
     };
+
+    console.log(isPrime(6));
+
+
   }
 
   @HostListener('window:beforeunload', ['$event'])

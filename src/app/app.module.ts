@@ -28,6 +28,7 @@ import { EcoChartsComponent } from './eco-charts/eco-charts.component';
 import { IocComponent } from './ioc/ioc.component';
 import { QuillComponent } from './quill/quill.component';
 import { Base64Component } from './base64/base64.component';
+import { IframeComponent } from './iframe/iframe.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { Base64Component } from './base64/base64.component';
     EcoChartsComponent,
     IocComponent,
     QuillComponent,
-    Base64Component
+    Base64Component,
+    IframeComponent
   ],
   imports: [
     BrowserModule,
