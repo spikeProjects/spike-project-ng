@@ -1,0 +1,380 @@
+<!-- <p>
+  basic-modal works!
+</p> -->
+<section>
+  <div class="narrow">
+    <p class="info">
+      “rubik-Client”已经注册成功，生成的Client ID 和 Client Secret 如下，请及时保存。
+    </p>
+    <div class="row">
+      <label>Client ID:</label>
+      <input
+        class="field"
+        type="text"
+        id="usernameId"
+        autocomplete="off"
+        value="ckjwoenfoewnfewegweg"
+      />
+      <img class="icon" />
+    </div>
+
+    <div class="row">
+      <label>刷新时间间隔</label>
+      <input
+        class="half"
+        type="text"
+        id="usernameId"
+        autocomplete="off"
+        value="ckjwoenfoewnfewegweg"
+      />
+      <input
+        class="half"
+        type="text"
+        id="usernameId"
+        autocomplete="off"
+        value="ckjwoenfoewnfewegweg"
+      />
+    </div>
+
+    <div class="row">
+      <label>当前任务状态</label>
+      <span>调度中</span>
+      <input
+        class="half"
+        type="text"
+        id="usernameId"
+        autocomplete="off"
+        value="ckjwoenfoewnfewegweg"
+      />
+    </div>
+
+    <div class="checkbox-wrapper">
+      <label>
+        <input type="checkbox" />开启 TLS
+      </label>
+    </div>
+  </div>
+  <div class="narrow">
+    <p class="info">
+      “rubik-Client”的Client Secret 已经更新完成，当前Client ID和Client Secret信息如下，请及时保存。
+    </p>
+    <div class="row">
+      <label>Client ID:</label>
+      <input
+        class="field"
+        type="text"
+        id="usernameId"
+        autocomplete="off"
+        value="ckjwoenfoewnfewegweg"
+      />
+      <img class="icon" />
+    </div>
+  </div>
+
+  <div class="wide">
+    <p class="info">
+      “rubik-Client”的Client Secret 已经更新完成，当前Client ID和Client Secret信息如下，请及时保存。
+    </p>
+  </div>
+
+  <p class="tip-info">
+    <svg
+      class="icon"
+      tuiIcon="check"
+    ></svg>
+    已成功生成
+  </p>
+  <div class="copy-field">
+    <label>Client ID:</label>
+    <input
+      class=""
+      type="text"
+      [(ngModel)]="fuckCopy"
+      #fuckyou
+    />
+    <span>
+      <svg
+        class="icon"
+        tuiIcon="book"
+        ngxClipboard [cbContent]="fuckCopy"
+        (cbOnSuccess)="copySuccessFun(fuckyou)"
+      ></svg>
+    </span>
+  </div>
+  
+  <div class="send-link">
+    <a>
+      发送邀请链接至邮箱
+      <svg
+        class="icon"
+        tuiIcon="angle-down"
+      ></svg>
+    </a>
+  </div>
+  <div class="copy-field">
+    <input
+      class=""
+      type="text"
+      id="usernameId"
+      autocomplete="off"
+      value="ckjwoenfoewnfewegweg"
+    />
+    <button tuiBtn="primary">发送链接</button>
+  </div>
+</section>
+
+<section class="form-ctn">
+  <form
+    [formGroup]="myForm"
+    (ngSubmit)="submit(myForm.value)"
+    class="mid"
+  >
+    <div
+      [class.error]="!myForm.get('username').valid && myForm.get('username').touched"
+    >
+      <div class="field-box">
+        <label for="usernameId"><span>*</span>{{'NAME'}}</label>
+        <input
+          class="field"
+          type="text"
+          placeholder="{{'NAME_PLACEHOLDER'}}"
+          id="usernameId"
+          autocomplete="off"
+          [formControl]="myForm.controls['username']"
+          maxlength="20"
+          />
+      </div>
+
+      <div
+        *ngIf="myForm.controls['username'].hasError('required') && myForm.controls['username'].touched"
+        class="message"
+      >{{'NAME_TIP'}}</div>
+      <div *ngIf="myForm.controls['username'].hasError('forbiddenLetter')" class="message"
+      >
+        不能含有特殊字符
+      </div>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('password').valid && myForm.get('password').touched"
+    >
+      <div class="field-box">
+        <label for="passwordId"><span>*</span>{{'PASSWORD'}}</label>
+        <input
+          class="field"
+          type="password"
+          placeholder="{{'PASSWORD_PLACEHOLDER'}}"
+          id="passwordId"
+          autocomplete="off"
+          [formControl]="myForm.controls['password']"
+          />
+      </div>
+
+      <div
+        *ngIf="myForm.controls['password'].hasError('required') && myForm.controls['password'].touched"
+        class="message"
+      >{{'PASSWORD_TIP_REQUIRED'}}</div>
+      <div
+        *ngIf="myForm.controls['password'].hasError('pattern') && myForm.controls['password'].touched"
+        class="message"
+      >{{'PASSWORD_PLACEHOLDER'}}</div>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('deletable').valid && myForm.get('deletable').touched"
+      class="radio-wrapper"
+    >
+      <div class="field-box">
+        <input class="radio true"
+          name="deletable"
+          type="radio" id="yes"
+          value=true
+          [formControl]="myForm.controls['deletable']"
+        />
+        <label for="yes">{{'DELETABLE'}}</label>
+        <input class="radio false"
+          name="deletable"
+          type="radio"
+          id="no"
+          value=false
+          [formControl]="myForm.controls['deletable']"
+        />
+        <label for="no">{{'UNSUPPERESSIBLE'}}</label>
+      </div>
+
+      <div
+        *ngIf="myForm.controls['deletable'].hasError('required') && myForm.controls['deletable'].touched"
+        class="message"
+      >{{'DELETABLE_TIP_REQUIRED'}}</div>
+    </div>
+
+    <div class="view">
+      <label>用户类型</label>
+      <span class="txt">Federation用户</span>
+    </div>
+
+    <div class="view">
+      <label>用户类型</label>
+      <span class="marks">
+        <mark class="c-1D96F3">系统管理员</mark> 
+        <mark class="c-0083B8">租户管理员</mark> 
+      </span>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('textarea').valid && myForm.get('textarea').touched"
+    >
+      <div class="field-box">
+        <label for="textareaId"><span>*</span>{{'NAME'}}</label>
+        <textarea rows="3" class="field textarea" placeholder="" id="textareaId" [formControl]="myForm.controls['textarea']">
+          {{''}}
+        </textarea>
+      </div>
+
+      <div
+        *ngIf="myForm.controls['textarea'].hasError('required') && myForm.controls['textarea'].touched"
+        class="message"
+      >{{'NAME_TIP'}}</div>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('textarea').valid && myForm.get('textarea').touched"
+    >
+      <div class="field-box">
+        <label for="textareaId2"><span>*</span>{{'NAME'}}</label>
+        <span class="tip-on-top">
+          <p class="tips">格式示例： address1:8932；address2:2344</p>
+          <textarea rows="3" class="field textarea" placeholder="" id="textareaId2" [formControl]="myForm.controls['textarea']">
+            {{''}}
+          </textarea>
+        </span>
+      </div>
+
+      <div
+        *ngIf="myForm.controls['textarea'].hasError('required') && myForm.controls['textarea'].touched"
+        class="message"
+      >{{'NAME_TIP'}}</div>
+    </div>
+
+    <div class="checkbox-wrapper">
+      <label>
+        <input type="checkbox" />开启 TLS
+      </label>
+    </div>
+
+    <div class="checkbox-wrapper">
+      <label class="only">
+        <!-- [(ngModel)]="params.attributes['guardian.server.tls.enabled']" -->
+        <!-- [ngModelOptions]="{standalone: true}" -->
+        <tui-checkbox
+          name="tls"
+        >开启 TLS</tui-checkbox>
+      </label>
+    </div>
+
+    <div class="buttons">
+      <button
+        class="tui-btn-md tui-btn-primary tui-btn"
+        type="submit"
+        [disabled]="!myForm.valid ? 'disabled' : null"
+      >{{'CONFIRM'}}</button>
+      <button
+        class="tui-btn-md tui-btn-default tui-btn"
+        type="reset"
+      >{{'RESET'}}</button>
+    </div>
+
+    <div class="chks-wrapper">
+      <label>系统角色</label>
+      <ul class="chks">
+        <li>
+          <tui-checkbox name="agree" tuiCompel [disabled]="loginFormDisabled">系统管理员</tui-checkbox>
+          <p>能够管理Federation所有资源，但不能管理租户内部资源和用户的 Access Token</p>
+        </li>
+      </ul>
+    </div>
+
+  </form>
+</section>
+
+<section class="add-wrapper">
+  <ul class="add-info">
+    <li class="f-title">自定义信息</li>
+    <li class="c-title">
+      <span >{{'key'}}</span>
+      <span >{{'value'}}</span>
+    </li>
+    <li class="align-center">未添加自定义信息</li>
+    <li>
+      <span>{{last.key}}</span>
+      <span>{{last.value}}</span>
+    </li>
+    <li class="last-attr">
+      <span>
+        <input
+          [(ngModel)]="last.key"
+          [ngModelOptions]="{standalone: true}" />
+      </span>
+      <span>
+        <input
+          [(ngModel)]="last.value"
+          [ngModelOptions]="{standalone: true}" />
+      </span>
+    </li>
+    <li class="add-line" >
+      <button class="add">+</button>
+    </li>
+  </ul>
+</section>
+
+<section class="tab-ctn">
+  <tui-table [tuiTableFlex]="[4,1]">
+    <tui-table-head>
+      <div>Name</div>
+      <div>Sex</div>
+    </tui-table-head>
+    <tui-table-scroll-body [maxHeight]=200>
+      <!-- <tui-table-row *ngFor="let datum of scrollTableData"> -->
+      <tui-table-row>
+        <div>datum</div>
+        <div>{{'datum.sex'}}</div>
+      </tui-table-row>
+      <tui-table-row>
+        <div>{{'datum.sex'}}</div>
+        <div>
+          <svg
+            tuiIcon="check"
+          ></svg>
+          <svg
+            tuiIcon="cross"
+          ></svg>
+        </div>
+      </tui-table-row>
+      <tui-table-row>
+        <div>
+          <tui-input
+            class="hundred-percent"
+            style="width: 100%"
+          ></tui-input>
+        </div>
+        <div>{{'datum.sex'}}</div>
+      </tui-table-row>
+      <tui-table-row>
+        <div>
+          <tui-input
+            class="hundred-percent"
+            style="flex: 1"
+          ></tui-input>
+          <span class="ckb-wrapper">
+            <tui-checkbox name="agree" ngModel tuiCompel [disabled]="loginFormDisabled">Agree To Terms</tui-checkbox>
+          </span>
+        </div>
+        <div>{{'datum.sex'}}</div>
+      </tui-table-row>
+    </tui-table-scroll-body>
+  </tui-table>
+  <div class="add-line">
+    <button class="add">+</button>
+  </div>
+</section>
+

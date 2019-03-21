@@ -52,7 +52,7 @@ import { IframeComponent } from './iframe/iframe.component';
     IocComponent,
     QuillComponent,
     Base64Component,
-    IframeComponent
+    IframeComponent,
   ],
   imports: [
     BrowserModule,

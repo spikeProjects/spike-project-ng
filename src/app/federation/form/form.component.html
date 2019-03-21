@@ -1,0 +1,164 @@
+<p>
+  form works!
+</p>
+
+<section class="form-ctn">
+  <h3>注册Federation用户</h3>
+  <form
+    [formGroup]="myForm"
+    class="normal"
+  >
+    <div
+      [class.error]="!myForm.get('username').valid && myForm.get('username').touched"
+    >
+      <div class="field-box">
+        <label for="usernameId"><span>*</span>{{'NAME'}}</label>
+        <input
+          class="field"
+          type="text"
+          placeholder="{{'NAME_PLACEHOLDER'}}"
+          id="usernameId"
+          autocomplete="off"
+          [formControl]="myForm.controls['username']"
+          />
+      </div>
+
+      <div
+        *ngIf="myForm.controls['username'].hasError('required') && myForm.controls['username'].touched"
+        class="message"
+      >{{'NAME_TIP'}}</div>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('password').valid && myForm.get('password').touched"
+    >
+      <div class="field-box">
+        <label for="passwordId"><span>*</span>{{'PASSWORD'}}</label>
+        <input
+          class="field"
+          type="password"
+          placeholder="{{'PASSWORD_PLACEHOLDER'}}"
+          id="passwordId"
+          autocomplete="off"
+          [formControl]="myForm.controls['password']"
+          />
+      </div>
+
+      <div
+        *ngIf="myForm.controls['password'].hasError('required') && myForm.controls['password'].touched"
+        class="message"
+      >{{'PASSWORD_TIP_REQUIRED'}}</div>
+      <div
+        *ngIf="myForm.controls['password'].hasError('pattern') && myForm.controls['password'].touched"
+        class="message"
+      >{{'PASSWORD_PLACEHOLDER'}}</div>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('fullName').valid && myForm.get('fullName').touched"
+    >
+      <div class="field-box">
+        <label for="fullNameId"><span>*</span>{{'FULL_NAME'}}</label>
+        <input
+          class="field"
+          type="text"
+          placeholder="{{'FULL_NAME_PLACEHOLDER'}}"
+          id="fullNameId"
+          autocomplete="off"
+          [formControl]="myForm.controls['fullName']"
+          />
+      </div>
+
+      <div
+        *ngIf="myForm.controls['fullName'].hasError('required') && myForm.controls['fullName'].touched"
+        class="message"
+      >{{'FULL_NAME_TIP_REQUIRED'}}</div>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('email').valid && (email.dirty || myForm.get('email').touched)"
+    >
+      <div class="field-box">
+        <label for="emailId"><span>*</span>{{'EMAIL'}}</label>
+        <input
+          class="field"
+          type="text"
+          placeholder="{{'EMAIL_PLACEHOLDER'}}"
+          id="emailId"
+          autocomplete="off"
+          [formControl]="myForm.controls['email']"
+          tecForbiddenEmail
+          />
+      </div>
+
+      <div
+        *ngIf="myForm.controls['email'].hasError('required') && myForm.controls['email'].touched"
+        class="message"
+      >{{'EMAIL_TIP_REQUIRED'}}</div>
+      <div
+        *ngIf="myForm.controls['email'].hasError('pattern') && myForm.controls['email'].touched"
+        class="message"
+      >{{'EMAIL_TIP_PATTERN'}}</div>
+      <div
+        *ngIf="email.errors?.forbiddenEmail && myForm.controls['email'].touched"
+        class="message"
+      >{{'EMAIL_NOT_ALLOWED'}}</div>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('deletable').valid && myForm.get('deletable').touched"
+      class="radio-wrapper"
+    >
+      <div class="field-box">
+        <input class="radio true"
+          name="deletable"
+          type="radio" id="yes"
+          value=true
+          [formControl]="myForm.controls['deletable']"
+        />
+        <label for="yes">{{'DELETABLE'}}</label>
+        <input class="radio false"
+          name="deletable"
+          type="radio"
+          id="no"
+          value=false
+          [formControl]="myForm.controls['deletable']"
+        />
+        <label for="no">{{'UNSUPPERESSIBLE'}}</label>
+      </div>
+
+      <div
+        *ngIf="myForm.controls['deletable'].hasError('required') && myForm.controls['deletable'].touched"
+        class="message"
+      >{{'DELETABLE_TIP_REQUIRED'}}</div>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('textarea').valid && myForm.get('textarea').touched"
+    >
+      <div class="field-box">
+        <label for="textareaId"><span>*</span>{{'NAME'}}</label>
+        <textarea rows="3" class="field textarea" placeholder="" id="textareaId" [formControl]="myForm.controls['textarea']">
+          {{''}}
+        </textarea>
+      </div>
+
+      <div
+        *ngIf="myForm.controls['textarea'].hasError('required') && myForm.controls['textarea'].touched"
+        class="message"
+      >{{'NAME_TIP'}}</div>
+    </div>
+
+    <div class="buttons">
+      <button
+        class="tui-btn-md tui-btn-primary tui-btn"
+        type="submit"
+        [disabled]="!myForm.valid ? 'disabled' : null"
+      >{{'CONFIRM'}}</button>
+      <button
+        class="tui-btn-md tui-btn-default tui-btn"
+        type="reset"
+      >{{'RESET'}}</button>
+    </div>
+  </form>
+</section>

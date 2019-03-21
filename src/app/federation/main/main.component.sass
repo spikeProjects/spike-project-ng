@@ -1,0 +1,173 @@
+\:host
+  display: block
+  height: 100%
+  overflow: auto
+
+// S: common
+$border-radius: 3px
+
+// E: common
+.banner-title
+  font-size: 24px
+  font-weight: 600
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: 60px
+  color: #336fd3
+  .left,
+  .right
+    display: flex
+  .left
+    justify-content: flex-start
+    .item
+      margin-right: 20px
+  .right
+    justify-content: flex-end
+    align-items: center
+    .item
+      margin-left: 20px
+
+
+.rectangles
+  width: 100%
+  overflow: auto
+  li
+    display: inline-block
+    float: left
+    width: 268px
+    height: 130px
+    border: 1px #DDE3E9 solid
+    border-radius: 2px
+    margin-right: 20px
+    margin-bottom: 20px
+    background: #eee
+    &>span
+      display: inline-block
+
+    .left
+      width: 64px
+      padding: 18px 16px
+      float: left
+      img
+        width: 34px
+        height: 34px
+        // background: #4EB1FE
+        .admin
+          // background: #2CC5DD
+
+    .right
+      width: 200px
+      .name
+        padding: 12px 10px 10px 0
+      
+        svg
+          display: inline-block
+          width: 16px
+          height: 16px
+          background: #ddd
+
+      p
+        width: 190px
+        line-height: 1.5
+        font-size: 12px
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-line-clamp: 4
+        /* autoprefixer: off */
+        -webkit-box-orient: vertical
+        /* autoprefixer: on */
+
+
+.details
+  font-size: 14px
+  color: #4D4D4D
+
+  .top
+    font-size: 24px
+    font-weight: 600
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 60px
+    color: #336fd3
+  .left,
+  .right
+    display: flex
+  .left
+    justify-content: flex-start
+    color: #4D4D4D
+
+  .right
+    justify-content: flex-end
+    align-items: center
+    .item
+      margin-left: 20px
+  &.tab-padding
+    padding: 4px 0 12px
+
+  .description
+    line-height: 1.5
+
+  .items
+    padding: 10px 0 16px
+    
+    label
+      color: #A2A9BB
+      margin-right: 60px
+
+      span
+        padding: 0 12px
+        color: #4D4D4D
+
+      .ellipsis
+        display: inline-block
+        width: 32px
+        height: 13px
+        line-height: 5px
+        padding: 0
+        margin: 0 12px
+        border: 1px #D8D8D8 solid
+        border-radius: 3px
+        text-align: center
+        position: relative
+        top: -3px
+        background: rgba(241,245,250,1)
+
+.hub
+  width: 500px
+  margin: 120px auto auto
+  font-size: 14px
+
+  h4
+    font-size: 20px
+    font-weight: 400
+  img
+    width: 22px
+    height: 22px
+    margin: 0 8px 0 130px
+  p
+    line-height: 32px
+    height: 32px
+    label
+      display: inline-block
+      float: left
+      text-indent: 165px
+    span
+  p.align-center
+    text-align: center
+
+  .login
+    margin: 12px auto 0 165px
+
+  .register
+    padding: 8px 0 0
+    .field
+      width: 230px
+      height: 32px
+      margin: 0 12px
+      border: 1px #eee solid
+      border-radius: $border-radius
+      
+    

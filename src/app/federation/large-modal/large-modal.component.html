@@ -1,0 +1,340 @@
+<!-- <p>
+  basic-modal works!
+</p> -->
+
+<section class="form-ctn">
+
+  <form
+    [formGroup]="myForm"
+    class="lg-md"
+  >
+    <div
+      [class.error]="!myForm.get('username').valid && myForm.get('username').touched"
+    >
+      <div class="field-box">
+        <label for="usernameId"><span>*</span>{{'NAME'}}</label>
+        <input
+          class="field"
+          type="text"
+          placeholder="{{'NAME_PLACEHOLDER'}}"
+          id="usernameId"
+          autocomplete="off"
+          [formControl]="myForm.controls['username']"
+          />
+      </div>
+
+      <div
+        *ngIf="myForm.controls['username'].hasError('required') && myForm.controls['username'].touched"
+        class="message"
+      >{{'NAME_TIP'}}</div>
+    </div>
+
+    <div class="view">
+      <label>用户类型</label>
+      <span class="marks">
+        <mark class="c-1D96F3">系统管理员</mark> 
+        <mark class="c-0083B8">租户管理员</mark> 
+      </span>
+    </div>
+
+    <div class="view">
+      <label>用户类型</label>
+      <span class="txt">
+        所属租户
+      </span>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('password').valid && myForm.get('password').touched"
+    >
+      <div class="field-box">
+        <label for="passwordId"><span>*</span>{{'PASSWORD'}}</label>
+        <input
+          class="field"
+          type="password"
+          placeholder="{{'PASSWORD_PLACEHOLDER'}}"
+          id="passwordId"
+          autocomplete="off"
+          [formControl]="myForm.controls['password']"
+          />
+      </div>
+
+      <div
+        *ngIf="myForm.controls['password'].hasError('required') && myForm.controls['password'].touched"
+        class="message"
+      >{{'PASSWORD_TIP_REQUIRED'}}</div>
+      <div
+        *ngIf="myForm.controls['password'].hasError('pattern') && myForm.controls['password'].touched"
+        class="message"
+      >{{'PASSWORD_PLACEHOLDER'}}</div>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('deletable').valid && myForm.get('deletable').touched"
+      class="radio-wrapper"
+    >
+      <div class="field-box">
+        <input class="radio true"
+          name="deletable"
+          type="radio" id="yes"
+          value=true
+          [formControl]="myForm.controls['deletable']"
+        />
+        <label for="yes">{{'DELETABLE'}}</label>
+        <input class="radio false"
+          name="deletable"
+          type="radio"
+          id="no"
+          value=false
+          [formControl]="myForm.controls['deletable']"
+        />
+        <label for="no">{{'UNSUPPERESSIBLE'}}</label>
+      </div>
+
+      <div
+        *ngIf="myForm.controls['deletable'].hasError('required') && myForm.controls['deletable'].touched"
+        class="message"
+      >{{'DELETABLE_TIP_REQUIRED'}}</div>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('textarea').valid && myForm.get('textarea').touched"
+    >
+      <div class="field-box no-tip">
+        <label for="passwordId"><span>*</span>{{'ffffffff'}}</label>
+        <span class="fields">
+            <input
+              class="half"
+              type="text"
+              placeholder="{{'PLACEHOLDER'}}"
+              id="usernameId"
+              autocomplete="off"
+              [formControl]="myForm.controls['username']"
+            />
+            <input
+              class="half"
+              type="text"
+              placeholder="{{'PLACEHOLDER'}}"
+              id="usernameId"
+              autocomplete="off"
+              [formControl]="myForm.controls['username']"
+            />
+        </span>
+      </div>
+      <div class="field-box no-tip">
+        <label for="passwordId"><span>*</span>{{'ffffffff'}}</label>
+        <input
+          class="field"
+          type="text"
+          placeholder="{{'PLACEHOLDER'}}"
+          id="usernameId"
+          autocomplete="off"
+          [formControl]="myForm.controls['username']"
+          />
+      </div>
+      <div class="right-brackets">
+        <img src="http://img2.imgtn.bdimg.com/it/u=1941019198,3553044830&fm=26&gp=0.jpg" />
+      </div>
+      <!-- TODO: limited time tips -->
+      <div
+        *ngIf="myForm.controls['textarea'].hasError('required') && myForm.controls['textarea'].touched"
+        class="message"
+      >{{'NAME_TIP'}}</div>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('textarea').valid && myForm.get('textarea').touched"
+    >
+      <div class="field-box fix-height-57">
+        <label for="passwordId"><span>*</span>{{'fuckfuckfuck'}}</label>
+        <span class="fields ">
+          <input
+            class="amount"
+            type="text"
+            placeholder="{{'hours'}}"
+            id="usernameId"
+            autocomplete="off"
+            [formControl]="myForm.controls['username']"
+          />
+          <span class="unit">小时</span>
+        </span>
+      </div>
+      <!-- TODO: limited time tips -->
+      <div
+        *ngIf="myForm.controls['textarea'].hasError('required') && myForm.controls['textarea'].touched"
+        class="message"
+      >{{'NAME_TIP'}}</div>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('textarea').valid && myForm.get('textarea').touched"
+    >
+      <div class="field-box">
+        <label for="textareaId2"><span>*</span>{{'NAME'}}</label>
+        <span class="tip-on-top">
+          <p class="tips">格式示例： address1:8932；address2:2344</p>
+          <textarea rows="3" class="field textarea" placeholder="" id="textareaId2" [formControl]="myForm.controls['textarea']">
+            {{''}}
+          </textarea>
+        </span>
+      </div>
+
+      <div
+        *ngIf="myForm.controls['textarea'].hasError('required') && myForm.controls['textarea'].touched"
+        class="message"
+      >{{'NAME_TIP'}}</div>
+    </div>
+
+    <div class="checkbox-wrapper">
+      <!--for no error tips only-->
+      <label class="only">
+        <input type="checkbox" />开启 TLS
+      </label>
+    </div>
+
+    <div
+      [class.error]="!myForm.get('username').valid && myForm.get('username').touched"
+    >
+      <div class="field-box">
+        <label for="usernameId"><span>*</span>{{'Refresh Token 有效时间'}}</label>
+        <label class="label-right">
+          <input type="checkbox" />永久有效
+        </label>
+      </div>
+      <div
+        *ngIf="myForm.controls['username'].hasError('required') && myForm.controls['username'].touched"
+        class="message"
+      >{{'NAME_TIP'}}</div>
+    </div>
+
+    <div class="buttons">
+      <button
+        class="tui-btn-md tui-btn-primary tui-btn"
+        type="submit"
+        [disabled]="!myForm.valid ? 'disabled' : null"
+      >{{'CONFIRM'}}</button>
+      <button
+        class="tui-btn-md tui-btn-default tui-btn"
+        type="reset"
+      >{{'RESET'}}</button>
+    </div>
+
+    <ul class="add-info">
+      <li class="f-title">自定义信息</li>
+      <li class="c-title">
+        <span >{{'key'}}</span>
+        <span >{{'value'}}</span>
+      </li>
+      <li class="align-center">未添加自定义信息</li>
+      <li>
+        <span>{{last.key}}</span>
+        <span>{{last.value}}</span>
+      </li>
+      <li class="last-attr">
+        <span>
+          <input
+            [(ngModel)]="last.key"
+            [ngModelOptions]="{standalone: true}" />
+        </span>
+        <span>
+          <input
+            [(ngModel)]="last.value"
+            [ngModelOptions]="{standalone: true}" />
+        </span>
+      </li>
+      <li class="add-line" >
+        <button class="add">+</button>
+      </li>
+    </ul>
+
+    <div class="buttons">
+      <button
+        class="tui-btn-md tui-btn-primary tui-btn"
+        type="submit"
+        [disabled]="!myForm.valid ? 'disabled' : null"
+      >{{'CONFIRM'}}</button>
+      <button
+        class="tui-btn-md tui-btn-default tui-btn"
+        type="reset"
+      >{{'RESET'}}</button>
+    </div>
+  </form>
+</section>
+<section>
+
+  <ul class="info-items">
+    <li>
+      <label>租户:</label>
+      <span>Demo</span>
+    </li>
+    <li>
+      <label>OAuth Client:</label>
+      <span>hdfs_oauth_client</span>
+    </li>
+    <li>
+      <label>Access Token数:</label>
+      <span>23</span>
+    </li>
+  </ul>
+
+  <tui-input
+    class="search-banner"
+    suffix="check"
+  ></tui-input>
+
+  <tui-table [tuiTableFlex]="[4,3,2,2]">
+    <tui-table-head>
+      <div>Name</div>
+      <div>Create Time</div>
+      <div>Access Token</div>
+      <div>Refresh Token</div>
+    </tui-table-head>
+    <tui-table-scroll-body [maxHeight]=200>
+      <!-- <tui-table-row *ngFor="let datum of scrollTableData"> -->
+      <tui-table-row>
+        <div>{{'name'}}</div>
+        <div>{{'create time'}}</div>
+        <div>{{'Access Token'}}</div>
+        <div>
+          <span
+            class="one-line-ellipsis"
+            style="width: 120px"
+            tuiTooltip="查看详情"
+            [tuiDropdownTrigger]="dropdownB"
+          >
+            <svg tuiIcon="trash"></svg>
+          </span>
+          <tui-dropdown #dropdownB direction="bottomCenter">
+            <tui-dropdown-item>
+              <span class="dropdown-here">
+                <input
+                  type="text"
+                  value="{{wefwegowngewegwegewgnewgw}}"
+                  #accessTokenInput
+                  disabled
+                />
+                <svg
+                  class="icon"
+                  tuiIcon="book"
+                  ngxClipboard
+                  [cbContent]="wefwegowngewegwegewgnewgw"
+                  (cbOnSuccess)="copy(wefwegowngewegwegewgnewgw)"
+                ></svg>
+              </span>
+              <p class="dropdown-p">过期时间： {{'y/M/d HH:mm:ss'}}</p>
+              <p class="dropdown-p">有效期： {{ 3993845/3600 }} 小时</p>
+            </tui-dropdown-item>
+          </tui-dropdown>
+        </div>
+      </tui-table-row>
+    </tui-table-scroll-body>
+  </tui-table>
+  <div class="btn-single">
+    <button
+      class="single"
+      tuiBtn="primary"
+    >Close</button>
+  </div>
+</section>
+
+  

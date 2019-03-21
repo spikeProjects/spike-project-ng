@@ -62,7 +62,11 @@ const appRoutes: Routes = [
     path: 'iframe',
     component: IframeComponent,
   },
-  { path: '', redirectTo: '/tdc', pathMatch: 'full' },
+  {
+    path: 'federation',
+    loadChildren: './federation/federation.module#FederationModule',
+  },
+  { path: '', redirectTo: '/federation', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 

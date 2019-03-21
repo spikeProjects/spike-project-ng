@@ -1,0 +1,351 @@
+// S: common
+$borderColor: #DDE3E9
+.c-1D96F3
+  background: #1D96F3
+.c-0083B8
+  background: #0083B8
+  
+.align-center
+  text-align: center
+.indent
+  text-indent: 12px
+
+.add-line
+  height: 64px
+  padding: 16px 0
+  text-align: center
+  .add
+    width: 200px
+    line-height: 30px
+    height: 32px
+    border: 1px #DDE3E9 dashed
+    background: transparent
+    color: #1D96F3
+
+.checkbox-wrapper
+  height: 32px
+  display: flex
+  align-items: center
+  .field-box
+    
+  .only
+    margin-left: 100px
+  input
+    margin-right: 12px
+
+.add-info
+  li
+    line-height: 32px
+    height: 32px
+    border-bottom: 1px #FAFAFA solid
+    span
+      float: left
+      display: inline-block
+      width: 50%
+      @extend .indent
+      position: relative
+      input
+        height: 24px
+        border: 1px #eee solid
+    span~span
+      &::before
+        content: '='
+        display: inline-block
+        width: 24px
+        height: 24px
+        text-indent: 0
+        position: absolute
+        left: -30px
+
+
+  .f-title
+    font-size: 14px
+
+  .c-title
+    background: rgba(250,250,250,1)
+  .last-attr
+    >span
+      text-indent: 0
+      input
+        @extend .indent
+  .add-line
+    height: 64px
+
+.chks-wrapper
+  display: flex
+  flex-direction: row
+
+  .chks
+    padding: 0 10px 10px
+    border: 1px #DDE3E9 solid
+    height: 160px
+    overflow: auto
+
+    li
+      p
+        margin-left: 18px
+        margin-top: -5px
+        font-size: 12px
+        line-height: 15px
+        color: #A2A9BB
+
+.tip-info
+  padding: 6px 0
+  line-height: 24px
+  .tui-icon
+    margin-right: 12px
+
+.copy-field
+  padding: 20px 10px 0
+  display: flex
+  align-items: center
+  label
+    flex-basis: 90px
+  input
+    flex: 1
+  span,
+  .tui-btn
+    position: relative
+  span
+    display: inline-block
+    width: 42px
+    height: 32px
+    padding: 8px 0
+    // border: 1px #DDE3E9 solid
+    vertical-align: middle
+    text-align: center
+    background: #fff
+.send-link
+  height: 32px
+  display: flex
+  align-items: center
+
+  a
+    color: #1D96F3
+    cursor: pointer
+  .tui-icon
+    width: 10px
+    height: 10px
+    fill: #1D96F3
+
+.view
+  display: flex
+  padding-bottom: 12px
+
+  label
+    padding-right: 20px
+    text-align: right
+  .txt
+    line-height: 32px
+  .marks
+    padding: 10px 0
+    line-height: auto
+    mark
+      float: left
+      display: inline-block
+      line-height: 12px
+      height: 14px
+      border: 0
+      padding: 1px 5px
+      border-radius: 3px
+      margin-right: 8px
+      margin-bottom: 4px
+      font-size: 12px
+      color: #fff
+
+.one-line-ellipsis
+  display: inline-block
+  padding: 0
+  height: 16px
+  line-height: 16px
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+.tui-table
+  .ckb-wrapper
+    padding: 0 10px
+
+// E: common
+
+// S: form-mid
+form
+  h3
+    font-size: 20px
+    text-align: center
+
+form
+  width: 640px
+  padding: 20px 20px
+  margin: 0 auto
+
+  &>div
+    position: relative
+
+  .field-box
+    display: flex
+    flex-direction: row
+    padding-bottom: 25px
+    textarea
+      height: 100px
+      width: 100%
+    .tip-on-top
+      flex-basis: 400px
+      .tips
+        font-size: 12px
+        color: #A2A9BB
+        padding: 6px 0
+        position: relative
+        top: 3px
+    &.no-tip
+      padding-bottom: 12px
+      .fields
+        display: flex
+        justify-content: space-between
+        flex-basis: 320px
+        .tui-select.half,
+        .half
+          width: 150px
+          flex-basis: 150px
+    &.fix-height-57
+      height: 57px
+      padding-bottom: 0
+    .amount
+      flex-basis: 120px
+    .unit
+      padding: 9px 0 30px
+      display: inline-block
+      flex: 1
+      text-indent: 12px
+
+    .label-right
+      flex-basis: 120px
+      display: flex
+      align-items: center
+      input
+        margin-right: 12px
+
+  .right-brackets
+    padding: 12px 5px
+    width: 20px
+    position: absolute
+    left: 50%
+    top: 15px
+    margin-left: 265px
+    img
+      display: inline-block
+      width: 16px
+      height: 16px
+      position: relative
+      top: 2px
+      right: -6px
+    &::before,
+    &::after
+      content: ''
+      display: inline-block
+      width: 12px
+      height: 14px
+      border-right: 1px #ddd solid
+      position: absolute
+      right: 0
+      border-right: 1px $borderColor solid
+    &::before
+      border-top: 1px $borderColor solid
+      top: -2px
+    &::after
+      border-bottom: 1px $borderColor solid
+      bottom: -3px
+
+
+
+  .error
+    .field
+      border-color: red
+
+    span
+      color: red
+
+  label
+    height: 32px
+    line-height: 32px
+    padding-right: 20px
+    flex-basis: 199px
+    text-align: right
+
+    span
+      position: relative
+      top: 4px
+      right: 5px
+      color: red
+
+  .field
+    flex-basis: 400px
+    font-size: 14px
+  
+  .tui-select
+    flex-basis: 400px
+  .radio-wrapper
+
+    .field-box
+      justify-content: center
+    .field-wrapper
+      display: flex
+      flex-direction: row
+      padding-bottom: 30px
+      label
+        height: 32px
+        line-height: 32px
+        padding-right: 20px
+        flex-basis: 199px
+        text-align: right
+      &>span
+        justify-content: center
+        .radio
+          top: 3px
+
+    .radio
+      position: relative
+      top: 9px
+      outline: none
+      width: 16px
+      height: 16px
+      border-radius: 8px
+      padding: 6px
+      border: 2px #ddd solid
+
+      &:checked
+        padding: 3px
+        border: 5px #305ab5 solid
+    label
+      flex-basis: auto
+      padding-left: 10px
+
+  .buttons
+    display: flex
+    padding-top: 12px
+    justify-content: center
+
+    button
+      margin: 0 10px
+      outline: none
+
+  .message
+    width: 600px
+    color: red
+    padding-left: 199px
+    font-size: 14px
+    position: absolute
+    bottom: 5px
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+// E: form-mid
+
+
+
+
+
+
+
+
